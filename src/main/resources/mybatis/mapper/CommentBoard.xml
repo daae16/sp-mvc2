@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CommentBoard">
+	<select id="selectComment" resultType="cb">
+		select * from comment_board
+	</select>
+
+	<insert id="insertComment" parameterType="cb">
+		insert into comment_board(cm_num, cm_title, cm_content, mi_num,
+		credat, cretim, moddat, modtim, cm_cnt)
+		values(seq_cm_num.nextval, #{cmTitle}, #{cmContent}, #{miNum},
+		to_char(sysdate,'YYYYMMDD'), to_char(sysdate,'HH24MISS'),
+		to_char(sysdate,'YYYYMMDD'), to_char(sysdate,'HH24MISS'), #{cmCnt})
+	</insert>
+	
+	<select id = "doLogin" resultType="cb">
+		select * from comment_board where cm_title = #{cmTitle} and mi_num = #{miNum}
+	</select>
+</mapper>

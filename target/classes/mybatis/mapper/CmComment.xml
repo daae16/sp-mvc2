@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CmComment">
+	<select id="selectCmComment" resultType="cc">
+		select * from cm_comment
+	</select>
+
+	<insert id="insertCmComment" parameterType="cc">
+	insert into cm_comment(cc_num, cm_num, cc_content, mi_num, 
+	credat, cretim, moddat, modtim)
+	
+	values(seq_cc_num.nextval, #{cmNum}, #{ccContent}, #{miNum}, 
+	to_char(sysdate,'YYYYMMDD'), to_char(sysdate,'HH24MISS'), 
+	to_char(sysdate,'YYYYMMDD'), to_char(sysdate,'HH24MISS'))
+	</insert>
+</mapper>
