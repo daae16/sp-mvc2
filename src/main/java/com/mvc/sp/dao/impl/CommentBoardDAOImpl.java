@@ -33,4 +33,18 @@ public class CommentBoardDAOImpl implements CommentBoardDAO {
 		}
 	}
 
+	@Override
+	public int updateCommentBoard(CommentBoardVO cb) {
+		try(SqlSession ss = ssf.openSession()){
+		}
+		return 0;
+	}
+
+	@Override
+	public int deleteCommentBoard(CommentBoardVO cb) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+
 }

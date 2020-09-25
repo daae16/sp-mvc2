@@ -18,4 +18,11 @@
 	<select id = "doLogin" resultType="cb">
 		select * from comment_board where cm_title = #{cmTitle} and mi_num = #{miNum}
 	</select>
+	
+	<update id="updateComment" parameterType="cb">
+	
+	UPDATE comment_board set cm_title=#{cmTitle}, moddat=to_char(sysdate,'yyyymmdd'), modtim=to_char(sysdate,'hh24miss') 
+	where cm_num=#{cmNum}
+	
+	</update>
 </mapper>
