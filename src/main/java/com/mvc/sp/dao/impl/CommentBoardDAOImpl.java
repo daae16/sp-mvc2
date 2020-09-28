@@ -42,7 +42,9 @@ public class CommentBoardDAOImpl implements CommentBoardDAO {
 
 	@Override
 	public int deleteCommentBoard(CommentBoardVO cb) {
-		return 0;
+		try(SqlSession ss = ssf.openSession()){
+			return ss.delete("CommentBoard.deleteComment", cb);
+		}
 	}
 	
 

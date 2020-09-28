@@ -23,6 +23,9 @@
 	
 	UPDATE comment_board set cm_title=#{cmTitle}, moddat=to_char(sysdate,'yyyymmdd'), modtim=to_char(sysdate,'hh24miss') 
 	where cm_num=#{cmNum}
-	
 	</update>
+	
+	<delete id="deleteComment" parameterType="cb">
+	delete comment_board where cm_num=#{cmNum}
+	</delete>
 </mapper>

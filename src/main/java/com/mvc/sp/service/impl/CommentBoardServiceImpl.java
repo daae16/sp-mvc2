@@ -26,6 +26,20 @@ public class CommentBoardServiceImpl implements CommentBoardService {
 		}
 		return cnt;
 	}
+	
+	@Override
+	public int updateCommentBoard(Model model, CommentBoardVO cb) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int deleteCommentBoard(Model model, CommentBoardVO cb) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
 
 	public List<CommentBoardVO> selectCommentBoard(CommentBoardVO cb) {
 		List<CommentBoardVO> cbList = new ArrayList<CommentBoardVO>();
@@ -47,4 +61,11 @@ public class CommentBoardServiceImpl implements CommentBoardService {
 		}
 		return cb;
 	}
+
+
+
+
+
+
+	
 }
